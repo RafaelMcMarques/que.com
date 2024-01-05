@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    join
+
+{% endblock %}
+
+{% block main %}
+<body class="orange-background">
+    <h1 class="title">QUE.COM</h1>
+    <form class="main-container" action="/join" method="POST">
+        <input class="text-input" type="text" placeholder="name" name="name" required autocomplete="off" autofocus>
+        <input name="id" value="{{id}}" hidden>
+        <input class="button" type="submit" value="Join!">
+    </form>
+    <p class="description"> Join {{name}} queue!</p>
+</body>
+{% endblock %}

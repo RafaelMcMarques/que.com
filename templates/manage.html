@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    manage
+{% endblock %}
+
+{% block head %}
+    <script src="../static/getPeople.js"></script>
+    <script src="../static/qrcode.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+{% endblock %}
+
+{% block main %}
+<body class="green-background">
+    <div>
+        <h1 class="title">QUE.COM</h1>
+        <div class="share">
+            <h1 class="center"> queue ID: <span id="queue-id">{{queue_id}}</span> </h1>
+            <button onclick="openPopUp()" class="qr-code-button orange-background">
+                <span class="material-symbols-outlined">
+                    qr_code_2
+                </span>
+            </button>
+        </div>
+
+        {% if not first %}
+            <h2 class="info"> queue is empty </h2>
+        {% else %}
+            <h2 class="info"> It is {{ first }}'s turn!</h2>
+            <p class="description"> There are {{ number_of_people }} waiting</p>
+        {% endif %}
+
+        <form class="main-container transparent" action="/manage" method="POST">
+            <input class="button" type="submit" name="next" value="next">
+            <input class="exit-button" type="submit" name="end" value="end">
+        </form>
+
+        <div id="popup">
+            <img id="qrcode">
+            <button onclick="closePopUp()" class="exit-button"> Close </button>
+        </div>
+    </div>
+<body>
+
+{% endblock %}

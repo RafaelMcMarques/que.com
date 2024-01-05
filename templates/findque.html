@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    find a que
+
+{% endblock %}
+
+{% block main %}
+<body class="green-background">
+    <h1 class="title"> QUE.COM</h1>
+    <div>
+        <form action="/findque" method="GET" class="main-container">
+            <input class="text-input" type="text" name="id" placeholder="que ID" required autocomplete="off" autofocus>
+            <input class="button" type="submit" value="Search!">
+        </form>
+    </div>
+    <p class="description"> Search for a queue!</p>
+</body>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    your turn
+{% endblock %}
+
+{% block head %}
+    <script src="../static/getPosition.js"></script>
+{% endblock %}
+
+{% block main %}
+<body class="green-background">
+    <h1 class="title">QUE.COM</h1>
+    <h1> IT'S YOUR TURN! </h1>
+
+    {% if message %}
+        <h2 class="center"> {{message}} </h2>
+    {% endif %}
+
+    <form action="/back" method="POST">
+        <input class="exit-button" type="submit" value="back to menu">
+    </form>
+</body>
+{% endblock %}

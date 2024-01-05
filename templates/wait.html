@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    wait
+{% endblock %}
+
+{% block head %}
+    <script src="../static/getPosition.js"></script>
+{% endblock %}
+
+{% block main %}
+<body 
+{% if position == 2 %}
+class="orange-background"
+{% else %} 
+class="red-background"
+{% endif %} >
+    <h1 class="title">QUE.COM</h1>
+    <h2 class="queue-name"> You are in "{{ queue_name }}" queue! </h1>
+    {% if position == 2 %}
+        <h2 class="center"> YOU ARE NEXT!</h1>
+    {% else %}
+        <h2 class="center"> Your position: {{ position }}</h1>
+    {% endif %}
+    <form action="/exit" method="POST">
+        <input class="exit-button" type="submit" value="Exit">
+    </form>
+</body>
+{% endblock %}

@@ -1,0 +1,160 @@
+body {
+    font-family: "Caprasimo";
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.orange-background {
+    background: rgb(255,182,2);
+    background: linear-gradient(90deg, rgba(255,182,2,1) 0%, rgba(255,144,2,1) 50%, rgba(255,182,2,1) 100%); 
+}
+
+.red-background {
+    background: rgb(255,104,0);
+    background: linear-gradient(90deg, rgba(255,104,0,1) 0%, rgba(255,62,0,1) 50%, rgba(255,104,0,1) 100%); 
+}
+
+.green-background {
+    background: rgb(124,255,2);
+    background: linear-gradient(90deg, rgba(124,255,2,1) 0%, rgba(25,195,0,1) 50%, rgba(124,255,2,1) 100%); 
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.button {
+    background-color: rgb(80,80,80);
+    max-height: 40px;
+    max-width: 250px;
+    border-radius: 5px;
+    border-color: transparent;
+    color: white;
+    font-family: inherit;
+    font-size: 130%;
+    margin: 5px;
+    height: 10vh;
+    width: 80vh;
+}
+
+.button:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+.title {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 4em;
+}
+
+.description {
+    text-align: center;
+    font-size: 1em;
+}
+
+.text-input {
+    background-color: transparent;
+    border-radius: 5px;
+    max-height: 40px;
+    max-width: 250px;
+    height: 10vh;
+    width: 80vh;
+    color: grey;
+    font-family: inherit;
+    margin: 5px;
+    border-color: 1px solid black;
+    border-style: solid;
+}
+
+.exit-button {
+    background-color: rgb(255,0,0);
+    max-height: 30px;
+    max-width: 200px;
+    border-radius: 5px;
+    border-color: transparent;
+    color: white;
+    font-family: inherit;
+    font-size: 130%;
+    margin: 5px;
+    margin-top: 5px;
+    height: 7vh;
+    width: 40vw;
+}
+
+.exit-button:hover {
+    cursor: pointer;
+    background-color: darkred;
+}
+
+.queue-name {
+    margin-top: 2px;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.transparent {
+    background-color: transparent;
+}
+.info {
+    text-align: center;
+    margin: 2px;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.share {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-code-button {
+    display: flex;
+    margin-left: 9px;
+    border-style: none;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-code-button:hover {
+    color: rgb(255, 217, 0);
+    cursor: pointer;
+}
+
+#qrcode {
+    width: 200px;
+    height: 200px;
+}

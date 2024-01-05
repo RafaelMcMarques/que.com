@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %} 
+    create
+{% endblock %}
+
+{% block main %}
+<body class="green-background">
+    <h1 class="title">QUE.COM</h1>
+    <form class="main-container" action="/create" method="POST">
+        <input class="text-input" type="text" name="name" placeholder="Queue's name" required autocomplete="off" autofocus>
+        <input class="text-input" type= "text" name="message" placeholder="Message e.g: Attend the counter!" autocomplete="off">
+        <input class="button" type="submit" value="Create!">
+    </form>
+    <p class="description"> Create your own queue!</p>
+</body>
+{% endblock %}
