@@ -2,8 +2,9 @@
 function openPopUp() {
     var googleChartApi = "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=";
     var queueID = document.getElementById("queue-id").innerHTML;
-    var queueURL = document.location.origin + "/join?id=" + queueID;
-    var QRCodeURL = googleChartApi + queueURL;
+    var queueName = document.getElementById("name").value;
+    var queueURL = document.location.origin + "/join?id=" + queueID + "&name=" + queueName;
+    var QRCodeURL = googleChartApi + encodeURIComponent(queueURL);
     document.getElementById("qrcode").src = QRCodeURL;
     document.getElementById("popup").style.display = "flex";
 }

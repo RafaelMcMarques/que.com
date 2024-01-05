@@ -91,12 +91,14 @@ def manage_GET():
     queue_id = str(session["queue_id"])
 
     # check if queue exists
-    cur.execute("SELECT * FROM queues WHERE id = ?", [queue_id])
-    if not cur.fetchall():
+    cur.execute("SELECT name FROM queues WHERE id = ?", [queue_id])
+    name = cur.fetchall()
+    if not name:
         cur.close()
         conn.close()
         session.clear()
         return redirect("/")
+    name = name[0][0]
 
     # get first in queue
     cur.execute("SELECT name FROM users WHERE queue_id = ? AND position=1", [queue_id])
@@ -112,7 +114,7 @@ def manage_GET():
     cur.close()
     conn.close()
 
-    return render_template("manage.html",queue_id=queue_id,first=first, number_of_people=number_of_people, url=url)
+    return render_template("manage.html",queue_id=queue_id,first=first, number_of_people=number_of_people, url=url, name=name)
 
 @app.route("/manage", methods=["POST"])
 def manage_POST():
